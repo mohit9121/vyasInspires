@@ -20,7 +20,7 @@ const CreateBlog = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/add", book)
+      .post("https://vyasinspires-backend.onrender.com//add", book)
       .then((res) => {
         setBook({
           title: "",

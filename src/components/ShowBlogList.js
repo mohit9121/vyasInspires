@@ -9,7 +9,7 @@ function ShowBlogList() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/blogs')
+      .get('https://vyasinspires-backend.onrender.com//blogs')
       .then((res) => {
         setBooks(res.data);
       })

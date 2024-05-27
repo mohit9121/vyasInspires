@@ -16,7 +16,7 @@ function UpdateBlogInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/blog/${id}`)
+      .get(`https://vyasinspires-backend.onrender.com//blog/${id}`)
       .then((res) => {
         setBook({
           title: res.data.title,
@@ -43,7 +43,7 @@ function UpdateBlogInfo(props) {
     };
 
     axios
-      .put(`http://localhost:5000/blog/${id}`, data)
+      .put(`https://vyasinspires-backend.onrender.com//blog/${id}`, data)
       .then((res) => {
         navigate(`/show-blog/${id}`);
       })

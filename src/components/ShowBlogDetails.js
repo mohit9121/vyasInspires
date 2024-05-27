@@ -15,7 +15,7 @@ function ShowBlogDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/blog/${id}`)
+      .get(`https://vyasinspires-backend.onrender.com//blog/${id}`)
       .then((res) => {
         res.data.description = nl2br(res.data.description);
         setBook(res.data);
@@ -27,7 +27,7 @@ function ShowBlogDetails(props) {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:5000/blog/${id}`)
+      .delete(`https://vyasinspires-backend.onrender.com//blog/${id}`)
       .then((res) => {
         navigate('/');
       })
