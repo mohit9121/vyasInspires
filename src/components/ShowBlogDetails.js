@@ -18,6 +18,7 @@ function ShowBlogDetails(props) {
       .get(`https://vyasinspires-backend.onrender.com//blog/${id}`)
       .then((res) => {
         res.data.description = nl2br(res.data.description);
+        console.log(res.data);
         setBook(res.data);
       })
       .catch((err) => {
@@ -65,27 +66,14 @@ function ShowBlogDetails(props) {
     <div className='ShowBookDetails'>
       <div className='container'>
         <div className='row'>
-          {/* <div className='col-md-10 m-auto'>
-            <br /> <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show Blog List
-            </Link>
-          </div>
-          <br /> */}
-          {/* <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Blog's Record</h1>
-            <p className='lead text-center'>View Blog's Info</p>
-            <hr /> <br />
-          </div> */}
           <div>
             <Navbar />
             <div className="about">
               <h1 className='abput-heading'>{book.title}</h1>
-              {/* <p className='about-para'>{book.description}</p> */}
               <p className="about-para" dangerouslySetInnerHTML={{__html: (book.description)}}></p>
             </div>
           </div>
-          <div className='col-md-6 m-auto'>
+          {/* <div className='col-md-6 m-auto'>
             <button
               type='button'
               className='btn btn-outline-danger btn-lg btn-block'
@@ -95,7 +83,7 @@ function ShowBlogDetails(props) {
             >
               Delete Blog
             </button>
-          </div>
+          </div> */}
           {/* <div className='col-md-6 m-auto'>
             <Link
               to={`/edit-blog/${book._id}`}

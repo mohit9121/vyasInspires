@@ -26,13 +26,32 @@
 }
 
 /* BookList Styles */
-.list {
+/* .list {
   display: grid;
   margin: 20px 0 50px 0;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
   grid-gap: 2em;
+} */
+
+
+.container {
+  display: grid;
+  gap: 1rem;
 }
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 .card-container {
   width: 250px;

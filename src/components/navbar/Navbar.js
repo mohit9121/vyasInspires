@@ -1,8 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import axios from'axios'
 import './Navbar.css'; // Import the CSS file for styling
 
 const Navbar = () => {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://vyasinspires-backend.onrender.com');
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    // Fetch data immediately on component mount
+    fetchData();
+
+    // Set up interval to fetch data every 2 minutes (120000 milliseconds)
+    const intervalId = setInterval(fetchData, 120000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
